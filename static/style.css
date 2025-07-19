@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f6f2;
+    color: #2d2d2d;
+}
+header {
+    background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+    padding-bottom: 40px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10vw;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d35400;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #d35400;
+}
+.hero {
+    text-align: center;
+    margin-top: 40px;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+.btn {
+    background: #d35400;
+    color: #fff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(211,84,0,0.1);
+}
+.btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px) scale(1.03);
+}
+main {
+    padding: 40px 10vw;
+}
+section {
+    margin-bottom: 60px;
+}
+.menu-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 32px;
+    min-width: 220px;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#booking {
+    background: #fff7f0;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 12px rgba(252,182,159,0.08);
+    max-width: 500px;
+    margin: 0 auto;
+}
+#booking h2 {
+    margin-top: 0;
+}
+form#bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+form#bookingForm input, form#bookingForm button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+}
+form#bookingForm button {
+    background: #d35400;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form#bookingForm button:hover {
+    background: #e67e22;
+}
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+.flashes .success {
+    color: #27ae60;
+    font-weight: bold;
+}
+.flashes .error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 24px 0;
+    background: #fcb69f;
+    color: #fff;
+    border-radius: 0 0 16px 16px;
+    margin-top: 40px;
+}
+@media (max-width: 900px) {
+    nav, main {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    .menu-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    main {
+        padding: 20px 2vw;
+    }
+    #booking {
+        padding: 16px 4px;
+    }
+} 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафе "Вдохновение"</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Вдохновение</div>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#booking">Бронирование</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Добро пожаловать в кафе "Вдохновение"</h1>
+            <p>Лучшее место для встреч, вкуса и вдохновения!</p>
+            <a href="#booking" class="btn">Забронировать столик</a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Уютное кафе в центре города с авторской кухней и атмосферой уюта. Мы заботимся о каждом госте!</p>
+        </section>
+        <section id="menu">
+            <h2>Меню</h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <h3>Паста с лососем</h3>
+                    <p>Свежий лосось, сливочный соус, итальянские специи.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Капучино</h3>
+                    <p>Ароматный кофе с нежной молочной пенкой.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Чизкейк</h3>
+                    <p>Домашний чизкейк с клубничным соусом.</p>
+                </div>
+            </div>
+        </section>
+        <section id="booking">
+            <h2>Бронирование столика</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <ul class="flashes">
+                  {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+            <form method="post" id="bookingForm">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Телефон" required pattern="[0-9\-\+\s\(\)]{7,}">
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <input type="number" name="guests" placeholder="Гостей" min="1" max="20" required>
+                <button type="submit">Забронировать</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Кафе "Вдохновение". Все права защищены.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
